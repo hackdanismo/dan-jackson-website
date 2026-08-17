@@ -1,0 +1,118 @@
+/*
+ * CSS Grid.
+ * A responsive 12-column grid to create structure and layouts for web pages and applications.
+ * 
+ * Author: Dan Jackson (Hackdanismo).
+ * Released under the MIT Licence: https://opensource.org/licenses/MIT
+ */
+
+@layer grid {    
+    :root {
+        /* Set the number of default columns in the grid that are equal width. */
+        --grid-columns: 12;
+        /* Set the size of the gap between each column. */
+        --grid-gap: 1rem;
+    }
+    
+    /*
+     * Debug the grid rows using the selector.
+     * This helps to see what the grid structure looks like during development.
+     * Set the data-debug attribute to "true" on the <html> element: 
+     * <html data-debug="true"> ... </html>
+     */
+    [data-debug="true"] .row > * {
+        /* Set the background color of each grid cell. */
+        background: #efefef;
+        /* Set a border for each grid cell. */
+        border: 1px solid #000;
+    }
+    
+    .row {
+        /* Turn the element into a grid container using CSS Grid. */
+        display: grid;
+        /* 
+         * Create a set of columns, the width is set by the --grid-columns CSS custom property.
+         * repeat(): repeat the column pattern multiple times based on the value specified in the custom property.
+         * minmax(0, 1fr): each column can shrink as small as 0, otherwise take an equal share of the available space (1fr).
+         */
+        grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+        /* Set the gap between each of the columns. */
+        gap: var(--grid-gap);
+        /* Place automatically positioned grid items by filling each row in sequence. */
+        grid-auto-flow: row;
+    }
+    
+    /* Target the last row within the grid */
+    .row:not(:last-child) {
+        /* Add spacing below a row unless it is the final child of its parent. */
+        margin-bottom: var(--grid-gap);
+    }
+    
+    .row > * {
+        /*
+         * Prevents a column from shrinking and cause horizontal overflow.
+         * Shrink the content to fit the grid column, even when the content is wider.
+         */
+        min-width: 0;
+        /* Wrap long, unbroken text to help prevent horizontal overflow. */
+        overflow-wrap: break-word;
+    }
+    
+    :where(
+        /* Direct child with the class of col */
+        .row > .col,
+        /* Direct child whose class attribute starts with col- */
+        .row > [class^="col-"],
+        /* Direct child whose class list contains a class starting with col-, but not necessarily first. */
+        .row > [class*=" col-"]
+    ) {
+        /* Span the full grid width by default */
+        grid-column: 1 / -1;
+    }
+    
+    /* Mobile classes. */
+    .row > .col-1 { grid-column: span 1; }
+    .row > .col-2 { grid-column: span 2; }
+    .row > .col-3 { grid-column: span 3; }
+    .row > .col-4 { grid-column: span 4; }
+    .row > .col-5 { grid-column: span 5; }
+    .row > .col-6 { grid-column: span 6; }
+    .row > .col-7 { grid-column: span 7; }
+    .row > .col-8 { grid-column: span 8; }
+    .row > .col-9 { grid-column: span 9; }
+    .row > .col-10 { grid-column: span 10; }
+    .row > .col-11 { grid-column: span 11; }
+    .row > .col-12 { grid-column: span 12; }
+    
+    /* Tablet classes. */
+    @media (min-width: 768px) {
+        .row > .col-md-1 { grid-column: span 1; }
+        .row > .col-md-2 { grid-column: span 2; }
+        .row > .col-md-3 { grid-column: span 3; }
+        .row > .col-md-4 { grid-column: span 4; }
+        .row > .col-md-5 { grid-column: span 5; }
+        .row > .col-md-6 { grid-column: span 6; }
+        .row > .col-md-7 { grid-column: span 7; }
+        .row > .col-md-8 { grid-column: span 8; }
+        .row > .col-md-9 { grid-column: span 9; }
+        .row > .col-md-10 { grid-column: span 10; }
+        .row > .col-md-11 { grid-column: span 11; }
+        .row > .col-md-12 { grid-column: span 12; }
+    }
+    
+    /* Desktop classes. */
+    @media (min-width: 1024px) {
+        .row > .col-lg-1 { grid-column: span 1; }
+        .row > .col-lg-2 { grid-column: span 2; }
+        .row > .col-lg-3 { grid-column: span 3; }
+        .row > .col-lg-4 { grid-column: span 4; }
+        .row > .col-lg-5 { grid-column: span 5; }
+        .row > .col-lg-6 { grid-column: span 6; }
+        .row > .col-lg-7 { grid-column: span 7; }
+        .row > .col-lg-8 { grid-column: span 8; }
+        .row > .col-lg-9 { grid-column: span 9; }
+        .row > .col-lg-10 { grid-column: span 10; }
+        .row > .col-lg-11 { grid-column: span 11; }
+        .row > .col-lg-12 { grid-column: span 12; }
+    }
+}
