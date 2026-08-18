@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css": "bun build ./styles/main.css --outdir ./dist --minify"
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "bun build ./styles/main.css --outfile ./dist/styles/main.css --minify",
+    "build:js": "bun build ./scripts/main.js --outfile ./dist/scripts/main.js --minify"
   },
   "repository": {
     "type": "git",
