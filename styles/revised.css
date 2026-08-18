@@ -311,7 +311,6 @@
         grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
         align-items: center;
         gap: clamp(3rem, 7vw, 7rem);
-        padding-top: clamp(4rem, 8vw, 7rem);
         padding-bottom: clamp(5rem, 8vw, 8rem);
         overflow: hidden;
     }
