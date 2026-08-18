@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=24.19.0"
+  },
   "scripts": {
     "build": "npm run build:css && npm run build:js",
     "build:css": "bun build ./styles/main.css --outfile ./dist/styles/main.css --minify",
