@@ -65,25 +65,29 @@
                     </a>
                     <nav class="navigation" aria-label="Primary navigation">
                         <ul>
-                            <li class="navigation-item navigation-item--hide-on-mobile"><a role="button" class="button button--secondary" href="#about">
+                            <li class="navigation-item navigation-item--hide-on-mobile">
+                                <a class="button button--secondary" href="#about">
                                     <span>About</span>
                                 </a>
                             </li>
-                            <li class="navigation-item navigation-item--hide-on-mobile"><a role="button" class="button button--secondary" href="#services">
+                            <li class="navigation-item navigation-item--hide-on-mobile">
+                                <a class="button button--secondary" href="#services">
                                     <span>Skills</span>
                                 </a>
                             </li>
-                            <li class="navigation-item navigation-item--hide-on-mobile"><a role="button" class="button button--secondary" href="#work">
+                            <li class="navigation-item navigation-item--hide-on-mobile">
+                                <a class="button button--secondary" href="#work">
                                     <span>Work</span>
                                 </a>
                             </li>
-                            <li class="navigation-item navigation-item--hide-on-mobile"><a role="button" class="button button--secondary" href="#process">
+                            <li class="navigation-item navigation-item--hide-on-mobile">
+                                <a class="button button--secondary" href="#process">
                                     <span>Process</span>
                                 </a>
                             </li>
                             <li class="navigation-item navigation-item--hide-on-desktop">
                                 <!-- Burger menu. -->
-                                <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+                                <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
                                     <span></span>
                                     <span></span>
                                     <span></span>
@@ -112,7 +116,7 @@
                         </ul>
                     </nav>
                     <!-- Mobile navigation. -->
-                    <nav class="menu" id="menu">
+                    <nav class="menu" id="menu" aria-label="Mobile navigation" hidden>
                         <a href="#home">Home</a>
                         <a href="#about">About</a>
                         <a href="#work">Work</a>
@@ -122,7 +126,7 @@
                 </div>
             </div>
         </header>
-        <main role="main" id="main-content home">
+        <main role="main" id="home">
             <section class="section">
                 <div class="container">
                     <!-- Hero -->
@@ -593,6 +597,10 @@
                                     <img
                                         src="images/frontify-homepage.webp"
                                         alt="The homepage of the frontify.com marketing website."
+                                        loading="lazy"
+                                        decoding="async"
+                                        width="397"
+                                        height="287"
                                     >
                                 </div>
                             </a>
@@ -635,6 +643,10 @@
                                     <img
                                         src="images/code-background.webp"
                                         alt="Demonstration of code on a monitor."
+                                        loading="lazy"
+                                        decoding="async"
+                                        width="397"
+                                        height="287"
                                     >
                                 </div>
                             </a>
@@ -676,7 +688,11 @@
                                 <div class="project-card__image project-card__image--peach">
                                     <img
                                         src="images/laptop-with-code.webp"
-                                        alt="Clay and Craft ecommerce website"
+                                        alt="Open laptop with website code being displayed."
+                                        loading="lazy"
+                                        decoding="async"
+                                        width="397"
+                                        height="287"
                                     >
                                 </div>
                             </a>
