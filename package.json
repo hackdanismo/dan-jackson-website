@@ -1,0 +1,27 @@
+{
+  "name": "dan-jackson-website",
+  "version": "1.0.0",
+  "description": "Personal website for Dan Jackson, a UK-based web developer.",
+  "main": "index.js",
+  "engines": {
+    "node": ">=24.19.0"
+  },
+  "scripts": {
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "bun build ./styles/main.css --outfile ./dist/styles/main.css --minify",
+    "build:js": "bun build ./scripts/main.js --outfile ./dist/scripts/main.js --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackdanismo/dan-jackson-website.git"
+  },
+  "author": "Dan Jackson",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hackdanismo/dan-jackson-website/issues"
+  },
+  "homepage": "https://github.com/hackdanismo/dan-jackson-website#readme",
+  "devDependencies": {
+    "bun": "^1.3.14"
+  }
+}
