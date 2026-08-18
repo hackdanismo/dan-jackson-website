@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "bun build ./styles/main.css --outdir ./dist --minify"
   },
   "repository": {
     "type": "git",
