@@ -124,6 +124,7 @@
         border-radius: 999px;
         background: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(10px);
+        z-index: 10000;
     }
 
     .navigation ul {
@@ -213,32 +214,110 @@
         visibility: visible;
     }
 
-    /* TODO: update px values and set color as variables. Drawer menu. */
+    /* Mobile drawer. */
     .menu {
         position: fixed;
         top: 0;
         left: 0;
-        width: 300px;
-        max-width: 55%;
-        height: 100vh;
+        width: min(85vw, 75%);
+        height: 100dvh;
         display: flex;
         flex-direction: column;
-        padding: 80px 30px 30px;
-        background: #fff;
+        padding:
+            clamp(7rem, 18vh, 9rem)
+            clamp(1.5rem, 7vw, 2.5rem)
+            2rem;
+        background: var(--off-white);
+        border-right: 1px solid rgba(17, 24, 32, 0.08);
+        box-shadow:
+            1rem 0 3rem rgba(7, 19, 30, 0.08);
         transform: translateX(-100%);
-        transition: transform 0.35s ease;
+        transition:
+            transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        counter-reset: menu-item;
         z-index: 1000;
     }
 
-    /* TODO: replace px values and set color as variables. */
-    .menu a {
-        padding: 15px 0;
-        color: #000;
-        text-decoration: none;
-        border-bottom: 1px solid #eee;
+    /* Small menu label. */
+    .menu::before {
+        content: "Navigation";
+        display: block;
+        margin-bottom: 1.5rem;
+        color: var(--teal);
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
     }
 
-    /* Slide the drawer into view. */
+    /* Navigation links. */
+    .menu a {
+        position: relative;
+        display: grid;
+        grid-template-columns: 2rem 1fr auto;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1.15rem 0;
+        color: var(--navy);
+        font-size: clamp(1.65rem, 7vw, 2.25rem);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.035em;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(17, 24, 32, 0.12);
+        counter-increment: menu-item;
+        transition:
+            color 0.3s ease,
+            padding-left 0.3s ease;
+    }
+
+    /* 01, 02, 03... */
+    .menu a::before {
+        content: "0" counter(menu-item);
+        color: var(--text-muted);
+        font-size: 0.65rem;
+        font-weight: 500;
+        letter-spacing: 0;
+        transition: color 0.3s ease;
+    }
+
+    /* Arrow on the right. */
+    .menu a::after {
+        content: "↗";
+        color: var(--teal);
+        font-size: 1rem;
+        font-weight: 400;
+        opacity: 0;
+        transform: translate(-0.4rem, 0.4rem);
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    /* Hover treatment. */
+    @media (hover: hover) {
+        .menu a:hover {
+            color: var(--teal);
+            padding-left: 0.35rem;
+        }
+
+        .menu a:hover::before {
+            color: var(--teal);
+        }
+
+        .menu a:hover::after {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    /* Keyboard navigation. */
+    .menu a:focus-visible {
+        outline: 2px solid var(--teal);
+        outline-offset: 0.35rem;
+    }
+
+    /* Drawer open state. */
     .menu.active {
         transform: translateX(0);
     }
