@@ -1,7 +1,7 @@
 {
   "name": "dan-jackson-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal website for Dan Jackson, a UK-based web developer.",
   "main": "index.js",
   "engines": {
     "node": ">=24.19.0"
@@ -15,9 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/hackdanismo/dan-jackson-website.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Dan Jackson",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/hackdanismo/dan-jackson-website/issues"
