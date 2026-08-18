@@ -1,4 +1,4 @@
-@layer tokens, base, layout, elements, header, hero, marquee, projects, services, footer;
+@layer tokens, fonts, base, layout, elements, header, hero, marquee, projects, services, footer;
 
 @layer tokens {
     :root {
@@ -18,8 +18,38 @@
     }
 }
 
+@layer fonts {
+    /* darker-grotesque-regular - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Darker Grotesque';
+        font-style: normal;
+        font-weight: 400;
+        src: url('../fonts/darker-grotesque-v10-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* josefin-slab-regular - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Josefin Slab';
+        font-style: normal;
+        font-weight: 400;
+        src: url('../fonts/josefin-slab-v29-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* allison-regular - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Allison';
+        font-style: normal;
+        font-weight: 400;
+        src: url('../fonts/allison-v13-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+}
+
 @layer base {
     body {
+        font-family: "Darker Grotesque";
         background-color: var(--off-white);
     }
 
@@ -497,11 +527,12 @@
     .polaroid__caption {
         margin: 1rem 0 0;
         color: var(--text);
-        font-family:
+        /*font-family:
             "Comic Sans MS",
             "Bradley Hand",
-            cursive;
-        font-size: clamp(1rem, 1.6vw, 1.25rem);
+            cursive;*/
+        font-family: "Allison";
+        font-size: clamp(1rem, 7vw, 2rem);
         line-height: 1.2;
         text-align: center;
         transform: rotate(-1deg);
@@ -509,6 +540,7 @@
 
     .hero__title {
         margin: 0;
+        font-family: "Josefin Slab";
         font-size: clamp(3rem, 7vw, 6rem);
         font-weight: 500;
         line-height: 0.95;
@@ -1149,6 +1181,7 @@
         font-weight: 500;
         line-height: 1;
         letter-spacing: -0.04em;
+        font-family: "Josefin Slab";
     }
 
     /* Main section title blocks to allow wrapping of each word. */
@@ -1426,6 +1459,7 @@
         font-weight: 500;
         line-height: 1.05;
         letter-spacing: -0.035em;
+        font-family: "Josefin Slab";
     }
 
     @media (min-width: 1024px) {
@@ -1546,6 +1580,7 @@
         font-weight: 500;
         line-height: 1.05;
         letter-spacing: -0.035em;
+        font-family: "Josefin Slab";
     }
 
     .process-panel__scribble {
@@ -1750,6 +1785,7 @@
         font-size: clamp(0.875rem, 7vw, 2rem);
         color: var(--off-white);
         margin-bottom: 0;
+        font-family: "Josefin Slab";
     }
 
     @media (min-width: 767px) {
@@ -1770,7 +1806,7 @@
     /* Button within the footer. */
     .footer__button {
         /* Set the width of the button to prevent it being full-width in the container. */
-        max-width: 160px;
+        max-width: 140px;
     }
 
     /* Lists within the footer. */
