@@ -22,3 +22,8 @@ $ npm run build
 ```
 
 ## Screenshots
+Screenshot showing the `Google Search Console`:
+<img width="1352" height="725" alt="Google Search Console" src="https://github.com/user-attachments/assets/8cb73ab5-d2a4-435d-ad95-87b69b265d21" />
+
+Screenshot showing the `Search Engine Results Page (SERP)` from Google following the indexing of the site:
+<img width="1336" height="687" alt="The Google Search Results page" src="https://github.com/user-attachments/assets/81d2ee38-ff04-4ebb-b9f5-60459da43106" />
