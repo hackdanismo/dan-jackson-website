@@ -4,7 +4,7 @@
   "description": "Personal website for Dan Jackson, a UK-based web developer.",
   "main": "index.js",
   "engines": {
-    "node": ">=24.19.0"
+    "node": ">=24.22.0"
   },
   "scripts": {
     "build": "npm run build:css && npm run build:js",
